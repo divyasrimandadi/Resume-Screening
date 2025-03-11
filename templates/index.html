@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Screening</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?resume,documents,office') no-repeat center center/cover;
+            backdrop-filter: blur(6px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,42 +18,73 @@
             margin: 0;
         }
         .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
             text-align: center;
+            width: 450px;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+        }
+        .container:hover {
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
         }
         h2 {
-            color: #333;
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #007bff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         input[type="file"] {
             margin: 20px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 14px;
+            border: 2px dashed #007bff;
+            border-radius: 8px;
+            background: #f0f8ff;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        input[type="file"]:hover {
+            border-color: #0056b3;
+            background: #e3f2fd;
         }
         button {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 16px 24px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         button:hover {
-            background-color: #0056b3;
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 91, 255, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Upload Resume for Screening</h2>
+        <h2>Upload Your Resume</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="resume" required>
             <br>
-            <button type="submit">Upload</button>
+            <button type="submit">Upload Resume</button>
         </form>
     </div>
 </body>
